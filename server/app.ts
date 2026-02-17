@@ -17,20 +17,23 @@ app.use((req, res, next) => {
   next();
 });
 
+// Router for API routes
+const router = express.Router();
+
 // Health check
-app.get("/api/health", (req, res) => {
+router.get("/health", (req, res) => {
   res.json({ status: "ok", timestamp: new Date() });
 });
 
 // Event Logging Endpoint for Director Mode
-app.post("/api/events", (req, res) => {
+router.post("/events", (req, res) => {
   const { eventType, message } = req.body;
   console.log(`[EVENT] ${eventType}: ${message}`);
   res.json({ status: "logged", timestamp: new Date() });
 });
 
 // Generate Document Endpoint
-app.post("/api/generate", async (req, res) => {
+router.post("/generate", async (req, res) => {
   try {
     const { templateId, data, services } = req.body;
     console.log("Generating document for:", templateId, "Services:", services);
@@ -101,7 +104,7 @@ app.post("/api/generate", async (req, res) => {
 });
 
 // Process Document Endpoint (Watermark/Linearize)
-app.post("/api/process", async (req, res) => {
+router.post("/process", async (req, res) => {
   try {
     const { pdfBase64, services } = req.body;
     let processedBuffer: any = Buffer.from(pdfBase64, 'base64');
@@ -127,5 +130,10 @@ app.post("/api/process", async (req, res) => {
     res.status(500).json({ error: "Failed to process document" });
   }
 });
+
+// Mount Router
+// This ensures /api/generate works, AND /generate works (if Vercel strips prefix)
+app.use("/api", router);
+app.use("/", router);
 
 export default app;
