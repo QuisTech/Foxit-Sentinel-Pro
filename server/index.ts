@@ -109,8 +109,8 @@ app.post("/api/process", async (req, res) => {
 
     // Apply services sequentially
     if (services.includes('watermark')) {
-      console.log("Watermark applied during generation phase.");
-      // processedBuffer = await foxitClient.applyWatermark(processedBuffer, "CONFIDENTIAL");
+      console.log("Applying Foxit Watermark Service...");
+      processedBuffer = await foxitClient.applyWatermark(processedBuffer, "CONFIDENTIAL");
     }
 
     if (services.includes('linearize')) {

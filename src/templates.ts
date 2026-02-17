@@ -27,12 +27,9 @@ export const PDF_TEMPLATES = {
         .signature-label { font-size: 10px; text-transform: uppercase; color: #6b7280; }
 
         .footer { position: fixed; bottom: 0; left: 0; right: 0; text-align: center; font-size: 9px; color: #9ca3af; border-top: 1px solid #e5e7eb; padding: 15px 0; font-family: Helvetica, sans-serif; }
-        
-        .watermark { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-45deg); font-size: 120px; color: rgba(252, 100, 8, 0.08); font-weight: 900; font-family: Helvetica, sans-serif; text-transform: uppercase; pointer-events: none; z-index: -1; border: 10px solid rgba(252, 100, 8, 0.08); padding: 20px 40px; border-radius: 20px; }
       </style>
     </head>
     <body>
-      ${data.hasWatermark ? '<div class="watermark">CONFIDENTIAL</div>' : ''}
       
       <div class="header">
         <div class="logo">SENTINEL <span>PRO</span></div>
@@ -131,11 +128,9 @@ export const PDF_TEMPLATES = {
         .terms p { margin-bottom: 10px; }
         .terms strong { color: #374151; }
 
-        .watermark { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-45deg); font-size: 120px; color: rgba(62, 24, 65, 0.05); font-weight: 900; text-transform: uppercase; pointer-events: none; z-index: -1; }
       </style>
     </head>
     <body>
-      ${data.hasWatermark ? '<div class="watermark">CONFIDENTIAL</div>' : ''}
       
       <div class="header-bg"></div>
       <div class="header">
@@ -231,11 +226,9 @@ export const PDF_TEMPLATES = {
         .sign-line { border-top: 1px solid #111; width: 250px; margin-bottom: 5px; }
         .sign-meta { font-family: Helvetica, sans-serif; font-size: 11px; color: #666; text-transform: uppercase; }
 
-        .watermark { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-45deg); font-size: 100px; color: rgba(0, 0, 0, 0.04); font-weight: 900; font-family: Helvetica, sans-serif; pointer-events: none; z-index: -1; }
       </style>
     </head>
     <body>
-      ${data.hasWatermark ? '<div class="watermark">DRAFT OFFER</div>' : ''}
       
       <div class="logo">SENTINEL <span>PRO HR</span></div>
       

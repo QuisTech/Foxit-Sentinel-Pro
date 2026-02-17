@@ -114,11 +114,12 @@ class FoxitClient {
         const job = await this.request('POST', '/pdf-services/api/pdf-watermark', {
             documentId: fileId,
             watermarkSettings: {
-                text: text,
-                position: 'center',
-                opacity: 50,
+                text: text + ` [${Date.now().toString().slice(-4)}]`, // Force unique content
+                position: 'center', 
+                scale: 0.5, // Try scale instead of fontSize if API supports it, or stick to fontSize
+                opacity: 40,
                 rotation: 45,
-                fontSize: 48
+                fontSize: 18 // Go even smaller
             }
         });
 

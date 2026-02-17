@@ -2,7 +2,7 @@
 
 > **Securely orchestrate high-value agreements with AI validation, Foxit PDF watermarking, and an immutable audit ledger.**
 
-![Banner](https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6)
+![Foxit Sentinel Pro](https://github.com/user-attachments/assets/b0b43d6c-2c92-48e3-abad-42c79c46edd7)
 
 Foxit Sentinel Pro is an auditable agreement orchestrator that automates the lifecycle of high-value contracts. It combines AI-driven data injection with Foxit's powerful PDF manipulation services to create a "glass pipeline" for legal documents—where every action is verified, logged, and cryptographically secured.
 
