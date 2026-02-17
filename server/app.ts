@@ -22,7 +22,15 @@ const router = express.Router();
 
 // Health check
 router.get("/health", (req, res) => {
-  res.json({ status: "ok", timestamp: new Date() });
+  res.json({ 
+    status: "ok", 
+    timestamp: new Date(),
+    env: {
+      hasClientId: !!process.env.FOXIT_CLIENT_ID,
+      hasClientSecret: !!process.env.FOXIT_CLIENT_SECRET,
+      baseUrl: process.env.FOXIT_BASE_URL || 'DEFAULT (https://na1.fusion.foxit.com)'
+    }
+  });
 });
 
 // Event Logging Endpoint for Director Mode
