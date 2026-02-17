@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import { foxitClient } from "./foxitClient";
 import { PDF_TEMPLATES } from "../src/templates";
 
-dotenv.config({ path: "./server/.env" });
+dotenv.config();
 
 const app = express();
 
