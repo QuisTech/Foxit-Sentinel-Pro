@@ -8,7 +8,7 @@ export default async function handler(req: any, res: any) {
     return app(req, res);
   } catch (err: any) {
     console.error("[CRITICAL] Request handler crashed:", err);
-    res.statusCode = 500;
-    res.end(`Internal Server Error: ${err.message}`);
+    res.statusCode = 200; // Return 200 to see error in tool
+    res.end(`DEBUG_ERROR: ${err.message}\nSTACK: ${err.stack}`);
   }
 }
